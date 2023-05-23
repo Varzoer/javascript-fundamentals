@@ -1,3 +1,11 @@
+// Task 1
+
+const a = 1;
+const b = 2;
+const c = 3;
+
+a < b < c;
+
 // Task 2
 
 let x = 1;
@@ -36,7 +44,6 @@ function findSameElements() {
     if (arr[i] === 5) {
       data.push(arr[i]);
       arr.splice(i, 1);
-      i--;
     }
   }
   console.log(arr);
@@ -45,3 +52,70 @@ function findSameElements() {
 }
 
 findSameElements();
+
+// Task 5
+
+function triangle() {
+  const a = parseFloat(prompt("Enter the length of the first side:"));
+  const b = parseFloat(prompt("Enter the length of the second side:"));
+  const c = parseFloat(prompt("Enter the length of the third side:"));
+
+  if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
+    alert("Incorrect data");
+    triangle();
+  }
+
+  const p = (a + b + c) / 2;
+  const area = Math.sqrt(p * (p - a) * (p - b) * (p - c)).toFixed(3);
+  alert(`Area: ${area}`);
+
+  if (
+    a ** 2 + b ** 2 === c ** 2 ||
+    a ** 2 + c ** 2 === b ** 2 ||
+    b ** 2 + c ** 2 === a ** 2
+  ) {
+    alert("The triangle is a right triangle");
+  } else {
+    alert("The triangle is not a right triangle");
+  }
+}
+triangle();
+
+// Task 6
+
+function calc(a, b, op) {
+  if (op === "+") {
+    const result1 = a + b;
+    console.log(result1);
+    return result1;
+  } else if (op === "-") {
+    const result2 = a - b;
+    console.log(result2);
+    return result2;
+  } else if (op === "*") {
+    const result3 = a * b;
+    console.log(result3);
+    return result3;
+  } else if (op === "/") {
+    const result4 = a / b;
+    console.log(result4);
+    return result4;
+  }
+}
+calc(12, 3, "-");
+
+// Task 7
+
+function isUnique(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[i] === arr[j]) {
+        console.log("false");
+        return false;
+      }
+    }
+  }
+  console.log("true");
+  return true;
+}
+isUnique([12, 21, 4, 4, 56, 7, 7]);
