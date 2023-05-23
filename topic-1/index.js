@@ -1,5 +1,5 @@
 // Task 2
-console.log("Smychok");
+console.log("Doe");
 
 // Task 3
 
@@ -30,7 +30,7 @@ console.log(isAdult);
 // Task 6
 
 const myName = "Mykola";
-const mySurname = "Smychok";
+const mySurname = "Doe";
 const myGroup = "@team-ns";
 const myBirthdayDate = 2008.0409;
 const isMarried = false;
