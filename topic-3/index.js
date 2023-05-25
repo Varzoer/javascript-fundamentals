@@ -26,14 +26,14 @@ createArray(2, 9);
 
 // // Task 3
 
-// function lowHighDouble(a, b) {
-//   for (let i = a; i <= b; i++) {
-//     for (let j = 0; j < i - a + 1; j++) {
-//       console.log(i);
-//     }
-//   }
-// }
-// lowHighDouble(2, 6);
+ function lowHighDouble(a, b) {
+   for (let i = a; i <= b; i++) {
+     for (let j = 0; j < i - a + 1; j++) {
+       console.log(i);
+     }
+   }
+ }
+ lowHighDouble(2, 6);
 
 // Task 4
 
