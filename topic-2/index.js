@@ -83,26 +83,28 @@ triangle();
 
 // Task 6
 
+const regex1 = /0|[5-9]|[a-z]|[A-Z]/;
+
 function calc(a, b, op) {
-  if (op === "+") {
-    const result1 = a + b;
-    console.log(result1);
-    return result1;
-  } else if (op === "-") {
-    const result2 = a - b;
-    console.log(result2);
-    return result2;
-  } else if (op === "*") {
-    const result3 = a * b;
-    console.log(result3);
-    return result3;
-  } else if (op === "/") {
-    const result4 = a / b;
-    console.log(result4);
-    return result4;
+  switch (op) {
+    case 1:
+      console.log(a - b);
+      break;
+    case 2:
+      console.log(a + b);
+      break;
+    case 3:
+      console.log(a / b);
+      break;
+    case 4:
+      console.log(a * b);
+      break;
+    case regex1:
+    default:
+      console.log("Please, enter number from 1 to 4");
   }
 }
-calc(12, 3, "-");
+calc(10, 3, 2);
 
 // Task 7
 

@@ -96,31 +96,6 @@ sortValues([
   undefined,
 ]);
 
-// Task 6
-
-const regex1 = /0|[5-9]|[a-z]|[A-Z]/;
-
-function calc(a, b, op) {
-  switch (op) {
-    case 1:
-      console.log(a - b);
-      break;
-    case 2:
-      console.log(a + b);
-      break;
-    case 3:
-      console.log(a / b);
-      break;
-    case 4:
-      console.log(a * b);
-      break;
-    case regex1:
-    default:
-      console.log("Please, enter number from 1 to 4");
-  }
-}
-calc(10, 3, 2);
-
 // Task 8
 
 function greetByTime() {
