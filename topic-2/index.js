@@ -62,7 +62,7 @@ function triangle() {
 
   if (isNaN(a) || isNaN(b) || isNaN(c) || a <= 0 || b <= 0 || c <= 0) {
     alert("Incorrect data");
-    triangle();
+    return triangle();
   }
 
   const p = (a + b + c) / 2;
