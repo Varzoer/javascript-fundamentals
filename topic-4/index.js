@@ -22,7 +22,7 @@ function checkAge() {
   while (userAge === "" || userAge === null) {
     userAge = prompt("The field is empty! Please enter your age.");
     throw new Error("Field is empty! Please fill in the prompts.");
-  }
+  }''
 
   try {
     if (userAge < 18 || userAge > 70) {
