@@ -16,23 +16,23 @@
         let maxCount = 0;
         let mostFrequent;
 
-        for (let item of arr) {
-            if (counts[item]) {
-                counts[item]++;
+        for (let el of arr) {
+            if (counts[el]) {
+                counts[el]++;
             } else {
-                counts[item] = 1;
+                counts[el] = 1;
             }
 
-            if (counts[item] > maxCount) {
-                maxCount = counts[item];
-                mostFrequent = item;
+            if (counts[el] > maxCount) {
+                maxCount = counts[el];
+                mostFrequent = el;
             }
         }
 
         let newArr = [mostFrequent];
         let filteredArr = arr.filter(item => item !== mostFrequent);
 
-        console.log(newArr, filteredArr);
+        console.log(newArr, filteredArr, maxCount);
         return [newArr, filteredArr];
     }
         findMostFrequent([3, 5, 7, 4, 2, 55, 7, 2, 4, 5, 8, 5]);
