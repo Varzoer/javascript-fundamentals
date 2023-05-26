@@ -37,21 +37,31 @@ isAdult();
 
 // Task 4
 
-let arr = [4, 5, 2, 1, 6, 5, 3, 5, 2, 5];
-let data = [];
-function findSameElements() {
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === 5) {
-      data.push(arr[i]);
-      arr.splice(i, 1);
+function findMostFrequent(arr) {
+  let counts = {};
+  let maxCount = 0;
+  let mostFrequent;
+
+  for (let item of arr) {
+    if (counts[item]) {
+      counts[item]++;
+    } else {
+      counts[item] = 1;
+    }
+
+    if (counts[item] > maxCount) {
+      maxCount = counts[item];
+      mostFrequent = item;
     }
   }
-  console.log(arr);
-  console.log(data);
-  return data;
-}
 
-findSameElements();
+  let newArr = [mostFrequent];
+  let filteredArr = arr.filter((item) => item !== mostFrequent);
+
+  console.log(newArr, filteredArr);
+  return [newArr, filteredArr];
+}
+findMostFrequent([3, 5, 7, 4, 2, 55, 7, 2, 4, 5, 8, 5]);
 
 // Task 5
 
