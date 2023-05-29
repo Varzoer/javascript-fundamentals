@@ -104,7 +104,7 @@ function showMonthName(month) {
 }
 
 try {
-  const monthName = showMonthName("tyu");
+  const monthName = showMonthName(3);
   console.log(monthName);
 } catch (e) {
   console.log(e.name + ": " + e.message);
