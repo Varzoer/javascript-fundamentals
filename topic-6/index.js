@@ -67,3 +67,38 @@ ctreateMainSection();
 
 // Task 4
 
+const outEl = document.querySelector(".out");
+const inputEl = document.querySelectorAll(".arr");
+const btnEl = document.querySelector(".btn");
+
+function getDataFromInput() {
+  const inputTextContent = Array.from(inputEl).map((item) => {
+    return item.value;
+  });
+
+  const result = inputTextContent.join(", ");
+  const newEl = document.createElement("p");
+  newEl.textContent = result;
+  outEl.appendChild(newEl);
+}
+
+btnEl.addEventListener("click", getDataFromInput);
+
+// Task 5
+
+function placeAnimations() {
+  const circles = document.querySelectorAll(".circle");
+
+  const animClassArr = Array.from(circles).map((item) => {
+    return item.dataset.anim;
+  });
+
+  for (let i = 0; i < circles.length; i++) {
+    circles[i].classList.add(animClassArr[i]);
+  }
+
+  console.log(animClassArr);
+}
+placeAnimations();
+
+// Task 6
