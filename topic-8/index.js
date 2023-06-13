@@ -57,7 +57,7 @@ checkCard("4444-4444-4444-4444");
 // Task 5
 
 const regExp5 = /^(?!_|-)[a-zA-Z0-9_-]+@(gmail|outlook|yahoo)\.com$/;
-const regExp6 = /(-).*\1/;
+const regExp6 = /.*-.*-/;
 
   function checkEmailV2(email) {
     if (regExp5.test(email) && !regExp6.test(email)) {
@@ -67,7 +67,7 @@ const regExp6 = /(-).*\1/;
     }
   };
 
-checkEmailV2("fgd-_fdg@gmail.com");
+checkEmailV2("fgd-fdg@gmail.com");
 
 // Task 6
 
