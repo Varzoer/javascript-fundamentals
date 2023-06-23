@@ -18,7 +18,7 @@ const calcArrProduct = (arr) => {
   return new Promise((resolve, reject) => {
     const result = arr.reduce((acum, item) => {
       return acum * item;
-    }, 0);
+    }, 1);
     if (typeof result === "number") {
       resolve(result);
     } else {
