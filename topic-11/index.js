@@ -17,7 +17,7 @@ getPromise("test promise", 5000).then(function (data) {
 const calcArrProduct = (arr) => {
   return new Promise((resolve, reject) => {
     const result = arr.reduce((acum, item) => {
-      return acum + item;
+      return acum * item;
     }, 0);
     if (typeof result === "number") {
       resolve(result);
