@@ -18,6 +18,8 @@ request.onupgradeneeded = () => {
     autoIncrement: true,
   });
   store.createIndex("product_name", "name", { unique: false });
+  store.createIndex("product_price", "price", { unique: false });
+  store.createIndex("product_currency", "currency", { unique: false });
   store.createIndex("product_description", "description", { unique: false });
   store.createIndex("product_img_url", "imgUrl", { unique: false });
 };
@@ -25,6 +27,8 @@ request.onupgradeneeded = () => {
 request.onsuccess = () => {
   const btn = document.querySelector(".btn");
   const nameInput = document.querySelector(".product-name");
+  const priceInput = document.querySelector(".product-price");
+  const currencyInput = document.querySelector(".product-currency");
   const descriptionInput = document.querySelector(".product-description");
   const imageInput = document.querySelector(".product-image");
 
@@ -35,8 +39,15 @@ request.onsuccess = () => {
 
     store.put({
       name: nameInput.value,
+      price: priceInput.value,
+      currency: currencyInput.value,
       description: descriptionInput.value,
       imgUrl: imageInput.value,
     });
+
+    nameInput.value = "";
+    priceInput.value = "";
+    descriptionInput.value = "";
+    imageInput.value = "";
   });
 };

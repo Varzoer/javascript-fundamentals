@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 const path = require("path");
 
-app.use(express.static("js"));
+app.use(express.static("project/js"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "html", "index.html"));
@@ -15,6 +15,10 @@ app.get("/admin", (req, res) => {
 
 app.get("/shop", (req, res) => {
   res.sendFile(path.join(__dirname, "html", "shop.html"));
+});
+
+app.post("/admin", (req, res) => {
+  res.sendFile(path.join(__dirname, "html", "admin.html"));
 });
 
 app.listen(port, () => {
