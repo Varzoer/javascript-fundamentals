@@ -44,16 +44,8 @@ request.onsuccess = () => {
       description: descriptionInput.value,
       imgUrl: imageInput.value,
     };
-
-    const addRequest = store.add(product);
-
-    addRequest.onsuccess = () => {
-      console.log("Product added successfully");
-    };
-
-    addRequest.onerror = (error) => {
-      console.log("Error adding product:", error);
-    };
+    
+    store.add(product);
 
     nameInput.value = "";
     priceInput.value = "";

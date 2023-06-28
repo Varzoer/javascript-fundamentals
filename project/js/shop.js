@@ -42,11 +42,8 @@ request.onsuccess = () => {
       productElement.appendChild(descriptionElement);
 
       const imageElement = document.createElement("img");
-      imageElement.classList.add("product-img");
-      imageElement.addEventListener("error", () => {
-        imageElement.src = "placeholder-image-url.png";
-      });
       imageElement.src = product.imgUrl;
+      imageElement.classList.add("product-img");
       productElement.appendChild(imageElement);
 
       productContainer.appendChild(productElement);
