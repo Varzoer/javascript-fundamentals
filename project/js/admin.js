@@ -11,8 +11,8 @@ request.onerror = (error) => {
   console.log(error);
 };
 
-request.onupgradeneeded = () => {
-  const db = request.result;
+request.onupgradeneeded = (event) => {
+  const db = event.target.result;
   const store = db.createObjectStore("products", {
     keyPath: "id",
     autoIncrement: true,
@@ -37,13 +37,23 @@ request.onsuccess = () => {
     const transaction = db.transaction("products", "readwrite");
     const store = transaction.objectStore("products");
 
-    store.put({
+    const product = {
       name: nameInput.value,
       price: priceInput.value,
       currency: currencyInput.value,
       description: descriptionInput.value,
       imgUrl: imageInput.value,
-    });
+    };
+
+    const addRequest = store.add(product);
+
+    addRequest.onsuccess = () => {
+      console.log("Product added successfully");
+    };
+
+    addRequest.onerror = (error) => {
+      console.log("Error adding product:", error);
+    };
 
     nameInput.value = "";
     priceInput.value = "";
