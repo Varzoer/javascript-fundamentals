@@ -46,6 +46,34 @@ request.onsuccess = () => {
       imageElement.classList.add("product-img");
       productElement.appendChild(imageElement);
 
+      const buttonDelElement = document.createElement("button");
+      buttonDelElement.textContent = "DELETE";
+      buttonDelElement.classList.add("product-btn-del");
+      productElement.appendChild(buttonDelElement);
+
+      const buttonAddElement = document.createElement("button");
+      buttonAddElement.textContent = "ADD TO CART";
+      buttonAddElement.classList.add("product-btn-add");
+      productElement.appendChild(buttonAddElement);
+
+      buttonDelElement.addEventListener("click", () => {
+        const key = cursor.key;
+
+        const deleteTransaction = db.transaction("products", "readwrite");
+        const deleteStore = deleteTransaction.objectStore("products");
+
+        const deleteRequest = deleteStore.delete(key);
+
+        deleteRequest.onsuccess = () => {
+          productElement.remove();
+          deleteStore.delete(key);
+        };
+
+        deleteRequest.onerror = (error) => {
+          console.log(error);
+        };
+      });
+
       productContainer.appendChild(productElement);
 
       cursor.continue();

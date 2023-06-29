@@ -4,6 +4,7 @@ const port = 5500;
 const path = require("path");
 
 app.use(express.static("project/public"));
+app.use(express.static("project/public/img"));
 app.use(express.static("project/js"));
 
 app.get("/", (req, res) => {
